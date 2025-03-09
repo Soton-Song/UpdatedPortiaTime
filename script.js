@@ -89,33 +89,33 @@ fetch('./data.json')
       }
     });
 
-    // 展示/隐藏角色物品
-    function toggleItems(character) {
-      const itemsDiv = document.getElementById(`items-${character.character}`);
-      if (itemsDiv) {
-        itemsDiv.classList.toggle("hidden");
-      } else {
-        const newItemsDiv = document.createElement("div");
-        newItemsDiv.id = `items-${character.character}`;
-        character.preferences.favorite.forEach(item => {
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "item";
-          itemDiv.textContent = `喜爱: ${item.item} (+${item.points})`;
-          newItemsDiv.appendChild(itemDiv);
-        });
-        character.preferences.like.forEach(item => {
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "item";
-          itemDiv.textContent = `喜欢: ${item.item} (+${item.points})`;
-          newItemsDiv.appendChild(itemDiv);
-        });
-        character.preferences.neutral.forEach(item => {
-          const itemDiv = document.createElement("div");
-          itemDiv.className = "item";
-          itemDiv.textContent = `中立: ${item.item} (+${item.points})`;
-          newItemsDiv.appendChild(itemDiv);
-        });
-        characterResultsDiv.appendChild(newItemsDiv);
-      }
-    }
+    // // 展示/隐藏角色物品
+    // function toggleItems(character) {
+    //   const itemsDiv = document.getElementById(`items-${character.character}`);
+    //   if (itemsDiv) {
+    //     itemsDiv.classList.toggle("hidden");
+    //   } else {
+    //     const newItemsDiv = document.createElement("div");
+    //     newItemsDiv.id = `items-${character.character}`;
+    //     character.preferences.favorite.forEach(item => {
+    //       const itemDiv = document.createElement("div");
+    //       itemDiv.className = "item";
+    //       itemDiv.textContent = `喜爱: ${item.item} (+${item.points})`;
+    //       newItemsDiv.appendChild(itemDiv);
+    //     });
+    //     character.preferences.like.forEach(item => {
+    //       const itemDiv = document.createElement("div");
+    //       itemDiv.className = "item";
+    //       itemDiv.textContent = `喜欢: ${item.item} (+${item.points})`;
+    //       newItemsDiv.appendChild(itemDiv);
+    //     });
+    //     character.preferences.neutral.forEach(item => {
+    //       const itemDiv = document.createElement("div");
+    //       itemDiv.className = "item";
+    //       itemDiv.textContent = `中立: ${item.item} (+${item.points})`;
+    //       newItemsDiv.appendChild(itemDiv);
+    //     });
+    //     characterResultsDiv.appendChild(newItemsDiv);
+    //   }
+    // }
   });
