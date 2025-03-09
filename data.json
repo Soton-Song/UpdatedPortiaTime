@@ -31,9 +31,8 @@
         { "item": "草药", "points": 2 },
         { "item": "白色木槿花", "points": 2 }
       ]
-    }
-  },
-  {
+    },
+    {
     "character": "盖斯特",
     "date": "2月11日",
     "preferences": {
