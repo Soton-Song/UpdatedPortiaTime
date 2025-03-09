@@ -33,7 +33,7 @@
       ]
     }
   },
-    {
+  {
     "character": "盖斯特",
     "date": "2月11日",
     "preferences": {
@@ -64,8 +64,6 @@
         { "item": "孔雀菊", "points": 3 },
         { "item": "能源石", "points": 3 },
         { "item": "松果", "points": 2 }
-      ],
-      "neutral": [
       ]
     }
   }
