@@ -1,0 +1,20 @@
+{
+  "characters": [
+    {
+      "character": "许医生",
+      "date": "冬4日",
+      "preferences": {
+        "favorite": [{ "item": "练刀玩偶", "points": 20 }],
+        "like": [{ "item": "护身符", "points": 8 }],
+        "neutral": [{ "item": "蔬菜", "points": 2 }]
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "name": "鱼羹",
+      "ingredients": ["盐*1", "蛋*1", "鱼*1"],
+      "attributes": ["最大体力值+5%", "体力+15"]
+    }
+  ]
+}

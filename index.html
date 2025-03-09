@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>波西亚送礼与食谱搜索</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    input { width: 300px; padding: 10px; margin-bottom: 20px; }
+    .result { margin-top: 20px; }
+    .character { font-weight: bold; font-size: 18px; margin-top: 10px; cursor: pointer; color: blue; }
+    .character:hover { text-decoration: underline; }
+    .item { margin-left: 20px; }
+    .recipe { margin-top: 20px; font-weight: bold; }
+    .ingredients { margin-left: 20px; color: #555; }
+    .attributes { margin-left: 20px; color: green; }
+  </style>
+</head>
+<body>
+  <h1>波西亚送礼与食谱搜索</h1>
+  
+  <!-- 搜索框：角色 -->
+  <h2>角色搜索</h2>
+  <input type="text" id="searchCharacter" placeholder="输入角色名或物品名...">
+  <div id="characterResults" class="result"></div>
+  
+  <!-- 搜索框：食谱 -->
+  <h2>食谱搜索</h2>
+  <input type="text" id="searchRecipe" placeholder="输入食谱名...">
+  <div id="recipeResults" class="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
