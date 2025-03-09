@@ -32,6 +32,42 @@
         { "item": "白色木槿花", "points": 2 }
       ]
     }
+  },
+    {
+    "character": "盖斯特",
+    "date": "2月11日",
+    "preferences": {
+      "favorite": [
+        { "item": "三层书柜", "points": 30 },
+        { "item": "双层斗柜", "points": 30 },
+        { "item": "壁炉", "points": 25 },
+        { "item": "猫头鹰钟", "points": 20 },
+        { "item": "挂壁花篮", "points": 18 },
+        { "item": "培根刃鱼卷", "points": 15 },
+        { "item": "三种建筑书", "points": 15 },
+        { "item": "格子地毯", "points": 15 },
+        { "item": "飞机模型", "points": 15 },
+        { "item": "深思者", "points": 15 },
+        { "item": "红菇刃鱼粥", "points": 15 },
+        { "item": "帆船模型", "points": 12 },
+        { "item": "雨伞", "points": 12 },
+        
+      ],
+      "like": [
+        { "item": "红宝石", "points": 8 },
+        { "item": "高脚玻璃杯", "points": 6 },
+        { "item": "香水苹果", "points": 6 },
+        { "item": "盐烤跳鱼", "points": 6 },
+        { "item": "咸咸的杂烩", "points": 6 },
+        { "item": "蓝宝石", "points": 5 },
+        { "item": "黄宝石", "points": 4 },
+        { "item": "孔雀菊", "points": 3 },
+        { "item": "能源石", "points": 3 },
+        { "item": "松果", "points": 2 }
+      ],
+      "neutral": [
+      ]
+    }
   }
   ],
   "recipes": [
