@@ -1,4 +1,3 @@
-// 假设你有角色和食谱的数据文件
 fetch('./data.json')
   .then(response => response.json())
   .then(data => {
@@ -14,43 +13,21 @@ fetch('./data.json')
 
       if (query) {
         data.characters.forEach(character => {
-          const matchedItems = [];
-
-          // 搜索角色名
           if (character.character.includes(query)) {
-            matchedItems.push(...Object.entries(character.preferences).flatMap(([key, items]) =>
-              items.map(item => ({ ...item, type: key }))
-            ));
-
-            // 显示角色
-            const characterDiv = document.createElement("div");
-            characterDiv.className = "character";
-            characterDiv.textContent = `${character.character} (${character.date})`;
-            characterDiv.addEventListener("click", () => toggleItems(character));
-            characterResultsDiv.appendChild(characterDiv);
-          }
-
-          // 搜索物品名
-          Object.entries(character.preferences).forEach(([key, items]) => {
-            items.forEach(item => {
-              if (item.item.includes(query)) {
-                matchedItems.push({ ...item, type: key });
-              }
-            });
-          });
-
-          // 显示匹配物品
-          if (matchedItems.length > 0) {
+            // 显示角色和物品信息
             const characterDiv = document.createElement("div");
             characterDiv.className = "character";
             characterDiv.textContent = `角色: ${character.character} (${character.date})`;
             characterResultsDiv.appendChild(characterDiv);
 
-            matchedItems.forEach(match => {
-              const itemDiv = document.createElement("div");
-              itemDiv.className = "item";
-              itemDiv.textContent = `${match.type === "favorite" ? "喜爱" : match.type === "like" ? "喜欢" : "中立"}: ${match.item} (+${match.points})`;
-              characterResultsDiv.appendChild(itemDiv);
+            // 显示物品列表
+            Object.entries(character.preferences).forEach(([key, items]) => {
+              items.forEach(item => {
+                const itemDiv = document.createElement("div");
+                itemDiv.className = "item";
+                itemDiv.textContent = `${key === "favorite" ? "喜爱" : key === "like" ? "喜欢" : "中立"}: ${item.item} (+${item.points})`;
+                characterResultsDiv.appendChild(itemDiv);
+              });
             });
           }
         });
@@ -88,34 +65,7 @@ fetch('./data.json')
         });
       }
     });
-
-    // // 展示/隐藏角色物品
-    // function toggleItems(character) {
-    //   const itemsDiv = document.getElementById(`items-${character.character}`);
-    //   if (itemsDiv) {
-    //     itemsDiv.classList.toggle("hidden");
-    //   } else {
-    //     const newItemsDiv = document.createElement("div");
-    //     newItemsDiv.id = `items-${character.character}`;
-    //     character.preferences.favorite.forEach(item => {
-    //       const itemDiv = document.createElement("div");
-    //       itemDiv.className = "item";
-    //       itemDiv.textContent = `喜爱: ${item.item} (+${item.points})`;
-    //       newItemsDiv.appendChild(itemDiv);
-    //     });
-    //     character.preferences.like.forEach(item => {
-    //       const itemDiv = document.createElement("div");
-    //       itemDiv.className = "item";
-    //       itemDiv.textContent = `喜欢: ${item.item} (+${item.points})`;
-    //       newItemsDiv.appendChild(itemDiv);
-    //     });
-    //     character.preferences.neutral.forEach(item => {
-    //       const itemDiv = document.createElement("div");
-    //       itemDiv.className = "item";
-    //       itemDiv.textContent = `中立: ${item.item} (+${item.points})`;
-    //       newItemsDiv.appendChild(itemDiv);
-    //     });
-    //     characterResultsDiv.appendChild(newItemsDiv);
-    //   }
-    // }
+  })
+  .catch(error => {
+    console.error('数据加载失败:', error);
   });
